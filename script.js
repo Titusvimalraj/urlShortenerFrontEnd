@@ -542,7 +542,7 @@ let signup = (email, password) => {
       if (data.token) {
         alert('You Have Successfully Signed Up! Please Check your email for verification link');
         setTimeout(() => {
-          navigateToDashboard();
+          navigateToinitialPage();
         }, 500);
       } else {
         throw data;
