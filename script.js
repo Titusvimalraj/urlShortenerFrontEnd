@@ -502,7 +502,7 @@ let resetPassword = (email) => {
       if (response.status == 200) {
         alert(data.message);
         setTimeout(() => {
-          navigateToDashboard();
+          navigateToinitialPage();
         }, 500);
       } else {
         throw data;
