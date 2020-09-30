@@ -567,7 +567,7 @@ let navigateToSignup = () => {
   loader();
   setTimeout(() => {
     let signupInnerHTML = `
-    <div class="row" style="margin:0">
+    <div class="row" style="margin:0;height:100vh;">
     <div class="col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4 d-flex align-items-center justify-content-center">
     <div class="card">
     <div class="card-header">
@@ -630,7 +630,7 @@ let navigateToForgotPassword = () => {
   loader();
   setTimeout(() => {
     let resetPageInnerHTML = `
-    <div class="row" style="margin:0">
+    <div class="row" style="margin:0;height:100vh;">
     <div class="col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4 d-flex align-items-center justify-content-center">
     <div class="card">
     <div class="card-header">
@@ -668,7 +668,7 @@ let navigateToinitialPage = () => {
   loader();
   setTimeout(() => {
     let landingPageInnerHTML = `
-    <div class="row" style="margin:0">
+    <div class="row" style="margin:0;height:100vh;">
     <div class="col-12 col-md-6 offset-md-3 col-xl-4 offset-xl-4 d-flex align-items-center justify-content-center">
     <div class="card">
     <div class="card-header">
