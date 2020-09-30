@@ -90,7 +90,8 @@ let generateInnerHTMLForHome = (resData) => {
     let divAccordionLinks = [];
 
     for (let url of urls) {
-      let urlDiv = `<div><a href="${url.url}" target="_blank">${url.shortUrl}</a></div>`
+      let linkURL = url.url.include('www.') ? `https://${url.url}` : url.url;
+      let urlDiv = `<div><a href="${linkURL}" target="_blank">${url.shortUrl}</a></div>`
       divAccordionLinks.push(urlDiv);
     }
 
