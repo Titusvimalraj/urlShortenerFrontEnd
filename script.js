@@ -5,7 +5,7 @@ let token = localStorage.getItem('token');
 let listOfURLID = [];
 
 let sweetAlertShowCustom = (title, message, icon) => {
-  swal({
+  return swal({
     title: title,
     text: message,
     button: "Close", // Text on button
