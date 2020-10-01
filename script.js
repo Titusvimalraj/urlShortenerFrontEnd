@@ -4,12 +4,13 @@ let email = localStorage.getItem('email');
 let token = localStorage.getItem('token');
 let listOfURLID = [];
 
-let sweetAlertShowCustom = (title, message, icon) => {
+let sweetAlertShowCustom = (title, message, type) => {
   return swal({
     title: title,
     text: message,
-    button: "Close", // Text on button
-    icon: icon //built in icons: success, warning, error, info
+    type: type,
+    button: "Close" // Text on button
+    //built in icons: success, warning, error, info
   });
 }
 
@@ -498,12 +499,16 @@ let signin = (email, password) => {
       if (err.error) {
         // alert(err.error);
         sweetAlertShowCustom('Error! Sign in', err.error, 'error');
-        location.reload();
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
         return;
       }
       // alert(err)
       sweetAlertShowCustom('Error! Sign in', err, 'error');
-      location.reload();
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
       return;
     }
   })();
