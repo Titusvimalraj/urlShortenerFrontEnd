@@ -290,7 +290,7 @@ let createUriApi = (urlValue) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'authorization': `Bearer ${localStorage.getItem('token')}`,
+          'authorization': `Bearer ${token}`,
           'redirect': 'follow'
         },
         body: JSON.stringify({
@@ -468,7 +468,7 @@ let navigateToDashboard = (email = localStorage.getItem('email'), token = localS
 
 };
 
-let signin = (email, password) => {
+let signin = (signinEmail, password) => {
   loader();
 
   (async () => {
@@ -479,15 +479,17 @@ let signin = (email, password) => {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          "email": email,
+          "email": signinEmail,
           "password": password
         })
       });
       const data = await response.json();
       if (data.token) {
-        localStorage.setItem('token', data.token);
-        localStorage.setItem('email', email);
 
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('email', signinEmail);
+        token = data.token;
+        email = signinEmail;
         setTimeout(() => {
           navigateToDashboard();
         }, 500);
