@@ -4,7 +4,7 @@ let email = localStorage.getItem('email');
 let token = localStorage.getItem('token');
 let listOfURLID = [];
 
-let sweetAlertShow = (title, message, icon) => {
+let sweetAlertShowCustom = (title, message, icon) => {
   swal({
     title: title,
     text: message,
@@ -66,7 +66,7 @@ let deleteURI = (uriId) => {
       if (response.status == 200) {
         listOfURLID.splice(indexofURI, 1)
         // alert('Short Uri Deleted Successfully')
-        sweetAlertShow('Success Deleted!', 'Short Uri Deleted Successfully', 'success');
+        sweetAlertShowCustom('Success Deleted!', 'Short Uri Deleted Successfully', 'success');
         setTimeout(() => {
           navigateToDashboard();
         }, 500);
@@ -78,12 +78,12 @@ let deleteURI = (uriId) => {
     } catch (err) {
       if (err.error) {
         // alert(err.error);
-        sweetAlertShow('Error Deleting!', err.error, 'error');
+        sweetAlertShowCustom('Error Deleting!', err.error, 'error');
         location.reload();
         return;
       }
       // alert(err)
-      sweetAlertShow('Error Deleting!', err, 'error');
+      sweetAlertShowCustom('Error Deleting!', err, 'error');
       location.reload();
       return;
     }
@@ -206,19 +206,19 @@ let getListOfURLsPerDay = () => {
       } catch (err) {
         if (err.error) {
           // alert(err.error);
-          sweetAlertShow('Error!', err.error, 'error');
+          sweetAlertShowCustom('Error!', err.error, 'error');
           location.reload();
           return;
         }
         // alert(err)
-        sweetAlertShow('Error!', error, 'error');
+        sweetAlertShowCustom('Error!', error, 'error');
         location.reload();
         return;
       }
     })();
 
   } catch (error) {
-    sweetAlertShow('Error!', error, 'error');
+    sweetAlertShowCustom('Error!', error, 'error');
     // alert(error);
   }
 
@@ -263,19 +263,19 @@ let getUrlList = () => {
       } catch (err) {
         if (err.error) {
           // alert(err.error);
-          sweetAlertShow('Error!', err.error, 'error');
+          sweetAlertShowCustom('Error!', err.error, 'error');
           location.reload();
           return;
         }
         // alert(err)
-        sweetAlertShow('Error!', err, 'error');
+        sweetAlertShowCustom('Error!', err, 'error');
         location.reload();
         return;
       }
     })();
 
   } catch (error) {
-    sweetAlertShow('Error!', error, 'error');
+    sweetAlertShowCustom('Error!', error, 'error');
     // alert(error);
   }
 
@@ -310,12 +310,12 @@ let createUriApi = (urlValue) => {
     } catch (err) {
       if (err.error) {
         // alert(err.error);
-        sweetAlertShow('Error!', err.error, 'error');
+        sweetAlertShowCustom('Error!', err.error, 'error');
         location.reload();
         return;
       }
       // alert(err)
-      sweetAlertShow('Error!', err, 'error');
+      sweetAlertShowCustom('Error!', err, 'error');
       location.reload();
       return;
     }
@@ -359,7 +359,7 @@ let createFormRender = () => {
     const urlValue = document.getElementById('url-create').value;
     if (!urlValue) {
       // alert('Url Value cannot be empty');
-      sweetAlertShow('Error!', 'Url Value cannot be empty', 'error');
+      sweetAlertShowCustom('Error!', 'Url Value cannot be empty', 'error');
       return;
     }
     createUriApi(urlValue);
@@ -460,7 +460,7 @@ let navigateToDashboard = (email = localStorage.getItem('email'), token = localS
     })
 
   } else {
-    sweetAlertShow('Error! Not Signed in', 'Token missing', 'error');
+    sweetAlertShowCustom('Error! Not Signed in', 'Token missing', 'error');
     navigateToinitialPage();
   }
 
@@ -497,12 +497,12 @@ let signin = (email, password) => {
     } catch (err) {
       if (err.error) {
         // alert(err.error);
-        sweetAlertShow('Error! Sign in', err.error, 'error');
+        sweetAlertShowCustom('Error! Sign in', err.error, 'error');
         location.reload();
         return;
       }
       // alert(err)
-      sweetAlertShow('Error! Sign in', err, 'error');
+      sweetAlertShowCustom('Error! Sign in', err, 'error');
       location.reload();
       return;
     }
@@ -526,7 +526,7 @@ let resetPassword = (email) => {
 
       if (response.status == 200) {
         // alert(data.message);
-        sweetAlertShow('Success! Reset Password', data.message, 'success');
+        sweetAlertShowCustom('Success! Reset Password', data.message, 'success');
         setTimeout(() => {
           navigateToinitialPage();
         }, 500);
@@ -538,12 +538,12 @@ let resetPassword = (email) => {
     } catch (err) {
       if (err.error) {
         // alert(err.error);
-        sweetAlertShow('Error! Reset', err.error, 'error');
+        sweetAlertShowCustom('Error! Reset', err.error, 'error');
         location.reload();
         return;
       }
       // alert(err)
-      sweetAlertShow('Error! Reset', err, 'error');
+      sweetAlertShowCustom('Error! Reset', err, 'error');
       location.reload();
       return;
     }
@@ -569,7 +569,7 @@ let signup = (email, password) => {
       const data = await response.json();
       if (data.token) {
         // alert('You Have Successfully Signed Up! Please Check your email for verification link');
-        sweetAlertShow('Success! Signup', 'You Have Successfully Signed Up! Please Check your email for verification link', 'success');
+        sweetAlertShowCustom('Success! Signup', 'You Have Successfully Signed Up! Please Check your email for verification link', 'success');
         setTimeout(() => {
           navigateToinitialPage();
         }, 500);
@@ -581,12 +581,12 @@ let signup = (email, password) => {
     } catch (err) {
       if (err.error) {
         // alert(err.error);
-        sweetAlertShow('Error! Signup', err.error, 'error');
+        sweetAlertShowCustom('Error! Signup', err.error, 'error');
         location.reload();
         return;
       }
       // alert(err)
-      sweetAlertShow('Error! Signup', err, 'error');
+      sweetAlertShowCustom('Error! Signup', err, 'error');
       location.reload();
       return;
     }
@@ -648,7 +648,7 @@ let navigateToSignup = () => {
 
       if (password != cpassword) {
         // alert('Passwords Mismatch!');
-        sweetAlertShow('Error!', 'Passwords Mismatch!', 'warning');
+        sweetAlertShowCustom('Error!', 'Passwords Mismatch!', 'warning');
         return;
       }
       signup(email, password);
