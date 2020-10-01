@@ -290,7 +290,7 @@ let createUriApi = (urlValue) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'authorization': `Bearer ${token}`,
+          'authorization': `Bearer ${localStorage.getItem('token')}`,
           'redirect': 'follow'
         },
         body: JSON.stringify({
@@ -299,7 +299,8 @@ let createUriApi = (urlValue) => {
       });
       const data = await response.json();
       if (data) {
-        alert('Short Uri Created Successfully')
+        // alert('Short Uri Created Successfully')
+        sweetAlertShowCustom('Success!', 'Short Uri Created Successfully', 'success');
         setTimeout(() => {
           navigateToDashboard();
         }, 500);
