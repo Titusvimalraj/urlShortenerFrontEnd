@@ -91,6 +91,36 @@ let deleteURI = (uriId) => {
   })();
 }
 
+let generateChartForDashboard = (chartData) => {
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const lineGraphChartData = chartData.map(el => {
+    const { day, month, year } = el._id;
+    const { count } = el;
+
+    return {
+      x: new Date(year, month + 1, day),
+      y: count
+    };
+  });
+
+  let chart = new Chart(ctx, {
+    type: 'line',
+    data: lineGraphChartData,
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unit: 'month'
+          }
+        }]
+      }
+    }
+  });
+
+
+}
+
 let generateInnerHTMLForHome = (resData) => {
   let cardsArray = [];
 
@@ -129,7 +159,9 @@ let generateInnerHTMLForHome = (resData) => {
     cardsArray.push(divAccordCards);
   }
 
-  let homeInnerHTMLGen = `<div class="row d-flex justify-content-center"><div class="col-12 col-md-10 col-lg-8 col-xl-6">
+  let homeInnerHTMLGen = `<div class="row d-flex justify-content-center">
+  <canvas id="myChart" width="400" height="400"></canvas>
+  <div class="col-12 col-md-10 col-lg-8 col-xl-6">
   <div class="accordion" id="accordionHome">${cardsArray.join('')}</div></div></div>`
 
   return `
@@ -201,6 +233,9 @@ let getListOfURLsPerDay = () => {
           homeTabEle.innerHTML = `Uri list empty add Uris to view`;
         } else {
           homeTabEle.innerHTML = generateInnerHTMLForHome(data);
+          setTimeout(() => {
+            generateChartForDashboard(data);
+          }, 500);
         }
 
 
