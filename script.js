@@ -111,7 +111,7 @@ let generateChartForDashboard = (chartData) => {
         xAxes: [{
           type: 'time',
           time: {
-            unit: 'month'
+            unit: 'day'
           }
         }]
       }
