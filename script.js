@@ -111,7 +111,14 @@ let generateChartForDashboard = (chartData) => {
         xAxes: [{
           type: 'time',
           time: {
-            unit: 'day'
+            unit: 'month'
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            max: 100,
+            min: 0,
+            stepSize: 1
           }
         }]
       }
