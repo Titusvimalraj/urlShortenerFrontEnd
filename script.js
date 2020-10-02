@@ -103,6 +103,8 @@ let generateChartForDashboard = (chartData) => {
     };
   });
 
+  console.log(lineGraphChartData);
+
   let chart = new Chart(ctx, {
     type: 'line',
     data: lineGraphChartData,
@@ -143,7 +145,7 @@ let generateChartForDashboard = (chartData) => {
     }
   });
 
-
+  console.log(chart);
 }
 
 let generateInnerHTMLForHome = (resData) => {
