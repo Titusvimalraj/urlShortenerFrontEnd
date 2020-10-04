@@ -139,10 +139,10 @@ let generateChartForDashboard = (chartData) => {
               'quarter': 'MMM DD',
               'year': 'MMM DD',
             },
-            unit: 'month',
+            unit: 'day',
             tooltipFormat: 'll HH:mm',
             unitStepSize: 1,
-            minUnit: 'day'
+            minUnit: 'hour'
           },
           scaleLabel: {
             display: true,
