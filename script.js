@@ -109,7 +109,7 @@ let generateChartForDashboard = (chartData) => {
       datasets: [{
         label: 'uriShorty',
         backgroundColor: "rgb(245, 66, 111)",
-        borderColor: window.chartColors.red,
+        borderColor: "rgb(245, 66, 111)",
         data: lineGraphChartData,
         type: 'line',
         pointRadius: 0,
