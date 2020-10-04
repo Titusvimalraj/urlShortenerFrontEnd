@@ -127,6 +127,23 @@ let generateChartForDashboard = (chartData) => {
         xAxes: [{
           type: 'time',
           display: true,
+          time: {
+            displayFormats: {
+              'millisecond': 'MMM DD',
+              'second': 'MMM DD',
+              'minute': 'MMM DD',
+              'hour': 'MMM DD',
+              'day': 'MMM DD',
+              'week': 'MMM DD',
+              'month': 'MMM DD',
+              'quarter': 'MMM DD',
+              'year': 'MMM DD',
+            },
+            unit: 'month',
+            tooltipFormat: 'll HH:mm',
+            unitStepSize: 1,
+            minUnit: 'day'
+          },
           scaleLabel: {
             display: true,
             labelString: 'Date'
@@ -135,7 +152,9 @@ let generateChartForDashboard = (chartData) => {
             major: {
               fontStyle: 'bold',
               fontColor: '#FF0000'
-            }
+            },
+            beginAtZero: true,
+            stepSize: 1
           }
         }],
         yAxes: [{
@@ -143,6 +162,11 @@ let generateChartForDashboard = (chartData) => {
           scaleLabel: {
             display: true,
             labelString: 'value'
+          },
+          ticks: {
+            max: 25,
+            min: 0,
+            stepSize: 1
           }
         }]
       }
