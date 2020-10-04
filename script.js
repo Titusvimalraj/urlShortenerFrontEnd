@@ -108,7 +108,9 @@ let generateChartForDashboard = (chartData) => {
     data: {
       datasets: [{
         label: 'uriShorty',
-        backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+        backgroundColor: rgb(
+          245, 66, 111
+        ),
         borderColor: window.chartColors.red,
         data: lineGraphChartData,
         type: 'line',
