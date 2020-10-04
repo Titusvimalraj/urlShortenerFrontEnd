@@ -168,7 +168,7 @@ let generateChartForDashboard = (chartData) => {
             max: 25,
             min: 0,
             beginAtZero: true,
-            stepSize: 1
+            stepSize: 2
           }
         }]
       }
