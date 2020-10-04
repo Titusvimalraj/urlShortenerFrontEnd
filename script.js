@@ -115,7 +115,6 @@ let generateChartForDashboard = (chartData) => {
         borderColor: "rgb(245, 66, 111)",
         fill: false,
         pointRadius: 1,
-        lineTension: 0,
         data: lineGraphChartData
       }]
     },
