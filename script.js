@@ -144,7 +144,6 @@ let generateChartForDashboard = (chartData) => {
             },
             unit: 'day',
             tooltipFormat: 'll HH:mm',
-            unitStepSize: 1,
             minUnit: 'hour'
           },
           scaleLabel: {
@@ -156,8 +155,7 @@ let generateChartForDashboard = (chartData) => {
               fontStyle: 'bold',
               fontColor: '#FF0000'
             },
-            beginAtZero: true,
-            stepSize: 1
+            beginAtZero: true
           }
         }],
         yAxes: [{
