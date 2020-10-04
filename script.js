@@ -114,7 +114,10 @@ let generateChartForDashboard = (chartData) => {
         backgroundColor: "rgb(245, 66, 111)",
         borderColor: "rgb(245, 66, 111)",
         fill: false,
+        radius: 3,
         pointRadius: 1,
+        capBezierPoints: true,
+        stepped: true,
         data: lineGraphChartData
       }]
     },
@@ -142,8 +145,7 @@ let generateChartForDashboard = (chartData) => {
               'year': 'MMM DD',
             },
             unit: 'day',
-            tooltipFormat: 'll HH:mm',
-            minUnit: 'hour'
+            tooltipFormat: 'll HH:mm'
           },
           scaleLabel: {
             display: true,
