@@ -127,6 +127,7 @@ let generateChartForDashboard = (chartData) => {
         xAxes: [{
           type: 'time',
           display: true,
+          distribution: 'linear',
           time: {
             displayFormats: {
               'millisecond': 'MMM DD',
