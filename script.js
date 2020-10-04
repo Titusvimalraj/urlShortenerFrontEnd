@@ -102,7 +102,7 @@ let generateChartForDashboard = (chartData) => {
       y: count
     };
   });
-
+  let color = Chart.helpers.color;
   console.log(lineGraphChartData);
   let chartCfg = {
     data: {
