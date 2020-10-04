@@ -96,7 +96,7 @@ let generateChartForDashboard = (chartData) => {
   const lineGraphChartData = chartData.map(el => {
     const { day, month, year } = el._id;
     const { count } = el;
-
+    console.log(moment(`${year} ${month + 1} ${day}`, 'YYYY MM DD'));
     return {
       x: moment(`${year} ${month + 1} ${day}`, 'YYYY MM DD'),
       y: count
