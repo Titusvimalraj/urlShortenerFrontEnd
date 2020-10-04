@@ -166,6 +166,7 @@ let generateChartForDashboard = (chartData) => {
           ticks: {
             max: 25,
             min: 0,
+            beginAtZero: true,
             stepSize: 1
           }
         }]
