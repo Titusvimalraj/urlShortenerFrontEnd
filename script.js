@@ -275,9 +275,11 @@ let generateInnerHTMLForHome = (resData) => {
   }
 
   let homeInnerHTMLGen = `<div class="row d-flex justify-content-center">
-  <canvas id="myChart" width="400" height="400"></canvas>
+  
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
-  <div class="accordion" id="accordionHome">${cardsArray.join('')}</div></div></div>`
+  <div class="accordion" id="accordionHome">${cardsArray.join('')}</div></div>
+  <canvas id="myChart" width="400" height="400"></canvas>
+  </div>`
 
   return `
   <div class="container-fluid">${homeInnerHTMLGen}</div>
