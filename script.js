@@ -98,7 +98,7 @@ let generateChartForDashboard = (chartData) => {
     const { count } = el;
 
     return {
-      x: new Date(year, month + 1, day),
+      x: moment(`${year} ${month + 1} ${day}`, 'YYYY MM DD'),
       y: count
     };
   });
