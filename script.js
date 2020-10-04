@@ -351,7 +351,7 @@ let generateInnerHTMLForHome = (resData) => {
   <div class="col-12 col-md-10 col-lg-8 col-xl-6">
   <div class="accordion" id="accordionHome">${cardsArray.join('')}</div></div>  
   </div>
-  <div class="row d-flex justify-content-center"><canvas id="myChart"></canvas></div>
+  <div class="row d-flex justify-content-center"><div class="col-12 col-md-10 col-lg-8 col-xl-6"><canvas id="myChart"></canvas></div></div>
   `
 
   return `
